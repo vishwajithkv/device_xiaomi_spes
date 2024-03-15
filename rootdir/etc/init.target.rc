@@ -242,3 +242,13 @@ on property:ro.boot.hwversion=*
 
 on property:vendor.fps_hal.restartimes=max
     stop vendor.fps_hal
+    
+service vendor.qti.hardware.display.composer /vendor/bin/hw/vendor.qti.hardware.display.composer-service
+    override
+    class hal animation
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    socket pps stream 0660 system system
+    writepid /dev/cpuset/foreground/tasks
