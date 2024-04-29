@@ -1,8 +1,10 @@
 <compatibility-matrix version="2.0" type="framework">
-    <hal format="aidl">
-        <name>vendor.lineage.health</name>
+    <hal format="hidl">
+        <name>vendor.lineage.livedisplay</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
         <interface>
-            <name>IChargingControl</name>
+            <name>IPictureAdjustment</name>
             <instance>default</instance>
         </interface>
     </hal>
