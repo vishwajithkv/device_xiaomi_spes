@@ -73,6 +73,9 @@ media.stagefright.thumbnail.prefer_hw_codecs=true
 mmp.enable.3g2=true
 persist.mm.enable.prefetch=true
 
+# Multi-gen LRU
+persist.device_config.mglru_native.lru_gen_config=core_and_mm_walk
+
 # Netflix Properties
 ro.netflix.bsp_rev=Q6115-31409-1
 
