@@ -58,9 +58,9 @@
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
       "Values": [
         "0",
-        "15",
+        "20",
         "30",
-        "45"
+        "40"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -75,11 +75,11 @@
       "ResetOnInit": true
     },
     {
-      "Name": "UclampFgMax",
-      "Path": "/dev/cpuctl/foreground/cpu.uclamp.max",
+      "Name": "UclampFgMin",
+      "Path": "/dev/cpuctl/foreground/cpu.uclamp.min",
       "Values": [
         "0",
-        "50"
+        "30"
       ],
       "ResetOnInit": true
     },
@@ -315,7 +315,7 @@
       "PowerHint": "INTERACTION",
       "Node": "UclampTAMin",
       "Duration": 0,
-      "Value": "15"
+      "Value": "20"
     },
     {
       "PowerHint": "INTERACTION",
@@ -350,62 +350,68 @@
     {
       "PowerHint": "LAUNCH",
       "Node": "UclampTAMin",
-      "Duration": 3000,
+      "Duration": 2000,
+      "Value": "40"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "UclampFgMin",
+      "Duration": 2000,
       "Value": "30"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBWHystTriggerCount",
-      "Duration": 3000,
+      "Duration": 2000,
       "Value": "0"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBWHystLength",
-      "Duration": 3000,
+      "Duration": 2000,
       "Value": "0"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBWHistMemory",
-      "Duration": 3000,
+      "Duration": 2000,
       "Value": "0"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBWMinFreq",
-      "Duration": 3000,
+      "Duration": 2000,
       "Value": "11863"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "GPUForceClkOn",
-      "Duration": 3000,
+      "Duration": 2000,
       "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "GPUForceRailOn",
-      "Duration": 3000,
+      "Duration": 2000,
       "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "GPUIdleTimer",
-      "Duration": 3000,
+      "Duration": 2000,
       "Value": "10000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "DDRLittleClusterMinFreq",
-      "Duration": 3000,
-      "Value": "15960"
+      "Duration": 2000,
+      "Value": "11863"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "DDRBigClusterMinFreq",
-      "Duration": 3000,
-      "Value": "15960"
+      "Duration": 2000,
+      "Value": "11863"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
@@ -417,7 +423,7 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "0"
+      "Value": "3"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
