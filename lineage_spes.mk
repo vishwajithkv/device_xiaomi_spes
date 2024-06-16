@@ -19,7 +19,7 @@ $(call inherit-product-if-exists, vendor/gapps/common.mk)
 $(call inherit-product-if-exists, vendor/prebuilt-apps/config.mk)
 
 # Camera
-$(call inherit-product-if-exists, vendor/miuicamera/config.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/camera/config.mk)
 
 # Product Specifics
 PRODUCT_NAME := lineage_spes
@@ -29,9 +29,6 @@ PRODUCT_MODEL := Redmi Note 11
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 # Fingerprint
 BUILD_FINGERPRINT := "Redmi/spes/spes:13/TKQ1.221114.001/V14.0.5.0.TGCINXM:user/release-keys"
