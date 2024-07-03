@@ -1,6 +1,5 @@
 runtime_resource_overlay {
     name: "WifiResSpes",
     theme: "WifiResSpes",
-    sdk_version: "current",
     vendor: true
 }
