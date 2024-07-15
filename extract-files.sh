@@ -14,7 +14,7 @@ VENDOR=xiaomi
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-ANDROID_ROOT="${MY_DIR}"/../../..
+ANDROID_ROOT="${MY_DIR}/../../.."
 
 HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
@@ -25,6 +25,9 @@ source "${HELPER}"
 
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
+
+KANG=
+SECTION=
 
 while [ "${#}" -gt 0 ]; do
     case "${1}" in
@@ -52,13 +55,13 @@ fi
 function blob_fixup() {
     case "${1}" in
         vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc)
-            sed -i "s|writepid /dev/stune/nnapi-hal/tasks|task_profiles NNApiHALPerformance|g" "${2}"
+            sed -i 's|writepid /dev/stune/nnapi-hal/tasks|task_profiles NNApiHALPerformance|g' "${2}"
             ;;
         vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so)
-            "${SIGSCAN}" -p "13 0A 00 94" -P "1F 20 03 D5" -f "${2}"
+            "${SIGSCAN}" -p '13 0A 00 94' -P '1F 20 03 D5' -f "${2}"
             ;;
         vendor/lib64/camera/components/com.qti.node.mialgocontrol.so)
-            "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
+            "${PATCHELF}" --add-needed 'libpiex_shim.so' "${2}"
             ;;
         vendor/lib64/camera/components/com.qti.node.mialgocontrol.so)
             llvm-strip --strip-debug  "${2}"
@@ -66,10 +69,9 @@ function blob_fixup() {
     esac
 }
 
-# Initialize the helper for common device
-setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
+# Initialize the helper
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
-extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
-        "${KANG}" --section "${SECTION}"
+extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 
 "${MY_DIR}/setup-makefiles.sh"
