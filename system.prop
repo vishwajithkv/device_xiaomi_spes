@@ -97,6 +97,7 @@ persist.vendor.ims.no_stapa=1
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ril.subscription.types=NV,RUIM
 ro.vendor.radio.features_common=3
+persist.vendor.radio.add_power_save=1
 
 # Ram Management
 ro.config.fha_enable=true
