@@ -11,19 +11,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from spes/spesn device
 $(call inherit-product, device/xiaomi/spes/device.mk)
 
-# Inherit some common ProjectEverest stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common risingOS stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Camera
 $(call inherit-product-if-exists, vendor/xiaomi/camera/config.mk)
 
-# Everest
-WITH_GAPPS := true
-EVEREST_BUILD_TYPE := OFFICIAL
-EVEREST_MAINTAINER := Knotzy07x
+# Rising OS
+RISING_MAINTAINER := leoxvis(vishwajithkv)
+RISING_CHIPSET := Snapdragon680
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RISING_MAINTAINER="leoxvis(vishwajithkv)"
 
 # Product Specifics
-PRODUCT_NAME := everest_spes
+PRODUCT_NAME := lineage_spes
 PRODUCT_DEVICE := spes
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 11

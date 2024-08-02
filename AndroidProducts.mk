@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/everest_spes.mk
+    $(LOCAL_DIR)/lineage_spes.mk
 
 COMMON_LUNCH_CHOICES := \
-    everest_spes-user \
-    everest_spes-userdebug \
-    everest_spes-eng
+    lineage_spes-user \
+    lineage_spes-userdebug \
+    lineage_spes-eng
