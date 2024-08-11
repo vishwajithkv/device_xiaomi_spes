@@ -23,6 +23,9 @@ RISING_CHIPSET := Snapdragon680
 PRODUCT_BUILD_PROP_OVERRIDES += \
     RISING_MAINTAINER="leoxvis(vishwajithkv)"
 
+# Sign the build
+-include vendor/lineage-priv/keys/keys.mk
+
 # Product Specifics
 PRODUCT_NAME := lineage_spes
 PRODUCT_DEVICE := spes
