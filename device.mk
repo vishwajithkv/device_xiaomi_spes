@@ -384,12 +384,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_k7tn/com.android.nfc_extras.xml
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
-
-PRODUCT_ENFORCE_RRO_TARGETS := *
-
-# Overlays RRO
 PRODUCT_PACKAGES += \
     CarrierConfigSpes \
     DeviceAsWebcamSpes \
@@ -398,6 +392,9 @@ PRODUCT_PACKAGES += \
     SettingsSpes \
     SettingsProviderSpes \
     SystemUISpes \
+    LineageSDKSpes \
+    DailerSpes \
+    ApertureSpes \
     TelephonySpes \
     WifiResSpes
 

@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "DialerSpes",
+    theme: "DialerSpes",
+    sdk_version: "current",
+    vendor: true,
+}
