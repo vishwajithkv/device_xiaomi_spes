@@ -20,6 +20,7 @@ $(call inherit-product-if-exists, vendor/xiaomi/camera/config.mk)
 # Rising OS
 RISING_MAINTAINER := leoxvis(vishwajithkv)
 RISING_CHIPSET := Snapdragon680
+PRODUCT_NO_CAMERA := false
 PRODUCT_BUILD_PROP_OVERRIDES += \
     RISING_MAINTAINER="leoxvis(vishwajithkv)"
 
